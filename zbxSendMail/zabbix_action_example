@@ -1,0 +1,28 @@
+Subject:
+{ITEM.ID}#[{TRIGGER.SEVERITY}] {TRIGGER.STATUS}: {TRIGGER.NAME}
+
+Message:
+<table border="1" cellpadding="0" cellspacing="0" width="100%" >
+<tr style="background-color: #FF9900">
+LOGO
+</tr>
+<tr><td>
+<br><b>Host:</b> {HOST.NAME}
+<br><b>Application:</b> {APP.NAME}
+<br><b>Trigger:</b> {TRIGGER.NAME}
+<br><b>Trigger status:</b> <span style='color: #color;'> {TRIGGER.STATUS} </span>
+<br><b>Trigger severity:</b> {TRIGGER.SEVERITY}
+<br>
+<br><b>Item values:</b>
+<br>
+<br>{ITEM.NAME} ({HOST.NAME1}:{ITEM.KEY1}): {ITEM.LASTVALUE}
+<br>
+<br>Detailed information:</b>
+<br><i> - {HOST.NAME1}:{ITEM.KEY1}: {ITEM.VALUE1}
+<br>    - {HOST.NAME2}:{ITEM.KEY2}: {ITEM.VALUE2}
+<br>
+</i>
+</td></tr>
+</table>
+
+
