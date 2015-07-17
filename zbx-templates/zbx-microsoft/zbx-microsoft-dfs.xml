@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<zabbix_export version="1.0" date="16.09.13" time="12.00">
+  <hosts>
+    <host name="Template_Microsoft_DFS">
+      <ip>0.0.0.0</ip>
+      <port>10050</port>
+      <status>3</status>
+      <groups>
+        <group>Templates</group>
+      </groups>
+      <triggers>
+      
+        <!-- Service state -->
+        
+        <trigger>
+          <description>DFS Namespace service not running</description>
+          <expression>{Template_Microsoft_DFS:service_state[Dfs].last(0)}#0</expression>
+          <priority>4</priority>
+        </trigger>
+        <trigger>
+          <description>DFS Replication service not running</description>
+          <expression>{Template_Microsoft_DFS:service_state[DFSR].last(0)}#0</expression>
+          <priority>4</priority>
+        </trigger>
+        
+      </triggers>
+      <items>
+
+        <!-- DFS Replicated Folders -->
+      
+        <item type="0" key="perf_counter[\DFS Replicated Folders(*)\Conflict Space In Use]" value_type="3">
+          <description>DFS: Conflict space in use</description>
+          <delay>60</delay>
+          <history>90</history>
+          <trends>365</trends>
+          <applications>
+            <application>DFS</application>
+          </applications>
+        </item>
+        <item type="0" key="perf_counter[\DFS Replicated Folders(*)\Deleted Space In Use]" value_type="3">
+          <description>DFS: Deleted space in use</description>
+          <delay>60</delay>
+          <history>90</history>
+          <trends>365</trends>
+          <applications>
+            <application>DFS</application>
+          </applications>
+        </item>
+        <item type="0" key="perf_counter[\DFS Replicated Folders(*)\Staging Space In Use]" value_type="3">
+          <description>DFS: Staging space in use</description>
+          <delay>60</delay>
+          <history>90</history>
+          <trends>365</trends>
+          <applications>
+            <application>DFS</application>
+          </applications>
+        </item>        
+        <item type="0" key="perf_counter[\DFS Replicated Folders(*)\Updates Dropped]" value_type="3">
+          <description>DFS: Updates dropped</description>
+          <delay>60</delay>
+          <history>90</history>
+          <trends>365</trends>
+          <applications>
+            <application>DFS</application>
+          </applications>
+        </item>
+        <item type="0" key="perf_counter[\DFS Replicated Folders(*)\File Installs Retried]" value_type="3">
+          <description>DFS: File installs retried</description>
+          <delay>60</delay>
+          <history>90</history>
+          <trends>365</trends>
+          <applications>
+            <application>DFS</application>
+          </applications>
+        </item>
+        
+        <!-- Service state -->
+        
+        <item type="0" key="service_state[Dfs]" value_type="0">
+          <description>DFS Namespace: Service state</description>
+          <delay>30</delay>
+          <history>90</history>
+          <trends>365</trends>
+          <applications>
+            <application>DFS Services</application>
+          </applications>
+        </item>
+        <item type="0" key="service_state[DFSR]" value_type="0">
+          <description>DFS Replication: Service state</description>
+          <delay>30</delay>
+          <history>90</history>
+          <trends>365</trends>
+          <applications>
+            <application>DFS Services</application>
+          </applications>
+        </item>
+        
+      </items>
+      <templates/>
+      <graphs>
+      </graphs>
+      <macros/>
+    </host>
+  </hosts>
+  <dependencies/>
+</zabbix_export>
